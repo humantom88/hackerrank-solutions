@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  height: 120vh;
+}
+
+h1 {
+  margin: 0;
+  background-color: aquamarine;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tooltip {
+  opacity: 1;
+  position: absolute;
+  transition: all 0.2s ease-in-out;
+  max-width: 400px;
+  border: 1px solid #000000;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0 16px 16px;
+  text-align: right;
+  background-color: rgb(207, 226, 243);
+}
+
+.tooltip .visible {
+  opacity: 1;
+}
+
+.tooltip-top:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background-color: rgb(207, 226, 243);
+  bottom: -12px;
+  transform: rotate(31deg) skewX(-33deg);
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+}
+
+.tooltip-left:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background-color: rgb(207, 226, 243);
+  top: 12px;
+  left: -12px;
+  transform: rotate(120deg) skewX(-33deg);
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+}
+
+.tooltip-right:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background-color: rgb(207, 226, 243);
+  top: 12px;
+  right: -12px;
+  transform: rotate(300deg) skewX(-33deg);
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+}
+
+
+.tooltip-bottom:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background-color: rgb(207, 226, 243);
+  top: -12px;
+  left: calc(50% - 14px);
+  transform: rotate(211deg) skewX(-33deg);
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+}
+
+.tooltip__header {
+  text-align: center;
+  width: 100%;
+}
+
+.tooltip__content {
+  text-align: center;
+  width: 100%;
+}
+
+.tooltip__button {
+  background-color: transparent;
+  border: 1px solid #000000;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  outline: none;
+}
+
+.tooltip__button:hover {
+  background-color: white;
+}
+
+.tooltip__button:active {
+  background-color: #e0e0e0;
+  border-color: #a3a3a3;
+}
