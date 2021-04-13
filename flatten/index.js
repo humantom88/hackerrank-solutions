@@ -50,3 +50,21 @@ console.log(flatten(d))
   c.g.n: 3
 }
 */
+
+// Лучшее решение
+
+const flatten = (source) => {
+  const result = {};
+  const readObject = (obj, prevKey = "") => Object
+    .keys(obj)
+    .forEach((key) => {
+      const val = obj[key];
+      if (typeof val !== "object") {
+        result[prevKey ? `${prevKey}.${key}`: key] = val;
+      } else {
+        readObject(val, prevKey ? `${prevKey}.${key}`: key);
+      }
+    });
+    
+  return readObject(source);
+};
